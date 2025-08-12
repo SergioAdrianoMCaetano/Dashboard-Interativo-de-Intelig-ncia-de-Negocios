@@ -1,0 +1,4 @@
+narwhals==2.1.1
+packaging==25.0
+plotly==6.2.0
+python-multipart==0.0.20
