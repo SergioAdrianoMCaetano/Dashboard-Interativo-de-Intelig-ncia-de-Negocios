@@ -6,7 +6,7 @@ def load_real_estate_data():
         df.columns = df.columns.str.strip()
 
         if "Valor (R$)" not in df.columns:
-            raise ValueError("Coluna 'Valor' não encontrada no CSV")
+            raise ValueError("Coluna 'Valor (R$)' não encontrada no CSV")
 
         df["Valor (R$)"] = (
             df["Valor (R$)"]
