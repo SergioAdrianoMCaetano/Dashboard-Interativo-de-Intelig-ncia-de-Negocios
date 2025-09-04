@@ -5,8 +5,14 @@ from app.services.analytics import (
     generate_region_comparison_chart,
     generate_bedroom_price_chart
 )
+import pandas as pd
 
 router = APIRouter()
+
+@router.get("/data")
+def get_raw_data():
+    df = pd.read_csv("backend/data/real_estate.csv")
+    return df.to_dict(orient="records")
 
 @router.get("/chart")
 def get_chart():
