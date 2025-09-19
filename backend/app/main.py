@@ -1,8 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from app.api.charts import router as charts_router
 from app.api.kpis import router as kpis_router
-from fastapi.responses import HTMLResponse
+from app.api.auth import router as auth_router
 from app.services.data_processing import load_real_estate_data
 import pandas as pd
 import os
